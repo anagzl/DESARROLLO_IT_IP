@@ -1,24 +1,46 @@
-<?php include("../../config/seguridad.php"); ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archivo No Encontrado </title>
-    <!-- Favicon -->
-	<link rel="icon" type="image/png" sizes="32x32" href="../img/logoInstitucion/logo_sin_letras.png">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet">
-    <link href="../../assets/css/error404.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="mainbox">
-        <div class="err">4</div>
-        <i class="far fa-question-circle fa-spin"></i>
-        <div class="err2">4</div>
-        <div class="msg">¿Quizás esta página se movió? ¿Se eliminó? ¿Se esconde en la cuarentena? ¿Nunca existió en primer lugar? 
-            <p>Vamos a <a href="../../views/user/portal_sistema_tickets.php"> Inicio </a> e intentemos desde allí. </p></div>
-          </div>
-</body>
-</html>
+<?php
+/**
+ * Estructura para el control de secciones y validacion de usuario en el sistema. 
+ * 
+ * @Autor: Luis Estrada 
+ * @Fecha Creacion: 01/03/2022
+ * @Fecha Revision: 08/03/2022
+*/
+
+/* 
+Descripcion de la sentencia include_once incluye y evalúa el fichero especificado durante la ejecución del script. 
+Tiene un comportamiento similar al de la sentencia include, siendo la única diferencia de que si el 
+código del fichero ya ha sido incluido, no se volverá a incluir, e include_once devolverá true. 
+ */
+include_once 'config/user.php';
+include_once 'config/user_session.php';
+
+$userSession = new UserSession();
+$user = new User();
+
+if(isset($_SESSION['user'])){
+    //echo "hay sesion";
+    $user->setUser($userSession->getCurrentUser());
+    include_once 'views/registrar_asistencia.php';
+
+}else if(isset($_POST['username']) && isset($_POST['password'])){
+    $userForm = $_POST['username'];
+    $passForm = $_POST['password'];
+
+    $user = new User();
+    if($user->userExists($userForm, $passForm)){
+       // echo "Existe el usuario";
+        $userSession->setCurrentUser($userForm);
+        $user->setUser($userForm);
+
+        include_once 'views/registrar_asistencia.php';
+    }else{
+       // echo "No existe el usuario";
+        $errorLogin = "Nombre de usuario y/o contraseña incorrecto. Favor intente de nuevo.";
+        include_once 'views/login.php';
+    }
+}else{
+    //echo "login";
+    include_once 'views/login.php';
+}
+?>

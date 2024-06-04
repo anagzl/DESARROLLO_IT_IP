@@ -6,7 +6,7 @@
 		if($usuario == "0" || $usuario == ''){
 			$_SERVER = array();
 			$_SESSION = array();
-			echo"<script> alert('Usuario o clave incorrecta. Vuelva a digitarlos por favor.'); window.location.href='../../views/user/login.php'; </script>";
+			echo"<script> alert('Usuario o clave incorrecta. Vuelva a digitarlos por favor.'); window.location.href='../../views/admin/login.php'; </script>";
 		}else{
 			session_start();
 			$_SESSION["user"] = $usuario;

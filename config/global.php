@@ -11,7 +11,7 @@
 define("DB_HOST", "localhost");
 
 // nombre de la base de datos
-define("DB_NAME", "bitacora_servicio_cliente_ip");
+define("DB_NAME", "control_de_asistencia_y_permisos");
 
 //nombre de usuario de base de datos
 define("DB_USERNAME", "root");

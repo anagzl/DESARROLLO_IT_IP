@@ -111,12 +111,12 @@ function mailboxpowerloginrd($user,$pass){
                 } */
         }else{
           // Si no hay resultados en la búsqueda, retornar error
-          $msg = 0;
+          $msg = "<script> alert('Usuario o clave incorrecta. Vuelva a digitarlos por favor.'); window.location.href='../user/login.php'; </script>";
         }
 	  }else{ 
         $array=0;
            // Si falla la autenticación, retornar un msj de error
-        $msg = 0;
+        $msg = "<script> alert('Usuario o clave incorrecta. Vuelva a digitarlos por favor.'); window.location.href='../user/login.php'; </script>";
       } 
 
   ldap_close($ldapconn); 

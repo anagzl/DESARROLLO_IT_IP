@@ -8,10 +8,10 @@
     <meta name="description" content="Login de usuario del sistema">
     <meta name="author" content="">
 
-    <title>Sistema Toma Ticket</title>
+    <title>Inicio de Sesión Del Sistema</title>
 	<!-- Favicon -->
 		<link rel="icon" type="image/png" sizes="32x32" href="../../img/logoInstitucion/logo_sin_letras.png">
-	<!-- Iconos  -->
+	<!-- Iconos  -->	
 		<link rel="stylesheet" href="../../assets/bootstrap-icons-1.8.1/bootstrap-icons.css">
 
     	<link href="../../assets/desingLogin/bootstrap-3.2.0.min.css" rel="stylesheet" id="bootstrap-css">
@@ -26,48 +26,50 @@
 		<script src="../../assets/sweetalert2/dist/sweetalert2.min.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="container">    
 	<div class="mx-auto">
 		<div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3"> 
-			<div class="row ">
+			<div class="row ">                
 			<div class="text-center">
 						<img class="sidebar-card-illustration mb-2"  width="400" height="80" src="../../img/logoInstitucion/LOGO IP 3-03.png" alt="...">
-
+		
 			</div>
-		</div>
-
+		</div>	  
+					
 		<div class="panel panel-default" >
 			<div class="panel-heading"><!-- iniciopanel-heading -->
-				<div class="panel-title text-center">Sistema Toma Ticket</div>
-			</div>
+				<div class="panel-title text-center">Sistema Control De Personal </div>
+			</div>     
 					<div class="panel-body" >
 							<form name="form" id="formLogin" class="form-horizontal" enctype="multipart/form-data" action="../../config/control.php"  method="POST">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="bi bi-person-fill"></i></span>
-									<input id="usuario" type="text" class="form-control" name="usuario" value="" placeholder="Usuario">
+									<input id="usuario" type="text" class="form-control" name="usuario" value="" placeholder="Usuario">                                        
 								</div>
 								<p></p>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="bi bi-key-fill"></i></span>
 									<input id="clave" type="password" class="form-control" name="clave" placeholder="Contraseña">
-								</div>
-								<p></p>
+								</div>     
+								<p></p>                                                             
 								<div class="form-group">
 									<!-- Button -->
 									<div class="col-sm-12 controls">
-										<button type="submit" href="#" class="btn  btn btn-warning btn-block btn-lg" value="Entrar"><i class="bi bi-box-arrow-in-right"></i> Inicio de sesión</button>  
+										<button type="submit" href="#" class="btn  btn btn-warning btn-block btn-lg" value="Entrar"><i class="bi bi-box-arrow-in-right"></i> Inicio de sesión</button>                          
 									</div>
 								</div>
 												<div class="text-center ">
-													<a class="small" href="portal_sistema_tickets.php"><i class="bi bi-house-fill"></i> Regreso al Portal Tomatickets</a>
+<!-- 													<a class="small" href="#"><i class="bi bi-unlock-fill"></i>&nbsp;¿Has olvidado tu contraseña?</a>
+													<a class="small" href="registro_usuarios.php">&nbsp;&nbsp;<i class="bi bi-person-plus-fill"></i>&nbsp;  ¡Crea una cuenta!</a> -->
+													<a class="small" href="portal.php"><i class="bi bi-house-fill"></i> Regreso al Portal</a>
 												</div>
-							</form>
-					</div>
-		</div><!--fin panel-heading  -->
+							</form>     
+					</div> 
+		</div><!--fin panel-heading  -->                    
 
 	</div><!-- Fin del div centrado mx-auto -->
-
-</div><!-- Fin del div del conteiner -->
+	
+</div><!-- Fin del div del conteiner --> 
 
 <div id="particles"></div>
 
